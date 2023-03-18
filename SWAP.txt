@@ -1,0 +1,19 @@
+;Aclaraciones: Guardamos en AX la posicion en memoria del dato 1, y en CX la del dato 2
+;              En caso de que la tabla sea impar y se deba operar en el dato almacenado a la mitad de la misma, tomarlo como caso especial
+
+
+
+SWAP:    PUSH BX        ;Guardamos Datos
+         PUSH DX
+
+         MOV BX, AX     ;Pasamos direccion de memoria del primer dato a BX
+         MOV DL, [BX]   ;Guardo el dato 1 en DL
+         MOV BX, CX     ;Pasamos direccion de memoria del segundo dato a BX
+         MOV DH, [BX]   ;Guardo el dato 2 en DH
+         MOV [BX], DL   ;Pasamos el dato 1 a donde antes estaba el dato 2
+         MOV BX, AX     ;Recuperamos la ubicacion en memoria del primer dato
+         MOV [BX], DH   ;Pasamos el dato 2 a donde antes estaba el dato 1
+
+         POP DX         ;Recuperamos Datos
+         POP BX
+RET
