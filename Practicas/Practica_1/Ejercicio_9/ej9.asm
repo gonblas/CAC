@@ -14,9 +14,9 @@ FIN:    POP DX
         RET
 
 ORG 2000H
-            MOV BX, OFFSET CADENA
-            MOV DL, 48
-            MOV CL, 0                  ;Inicializo el contador en 0
-            CALL CONCAR
-            HLT
+        MOV BX, OFFSET CADENA
+        MOV DL, 48
+        MOV CL, 0                  ;Inicializo el contador en 0
+        CALL CONCAR
+        HLT
 END
