@@ -2,13 +2,14 @@
 ## *Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.*
 ___
 
-## Objetivos de la practica:
+## ***Objetivos de la practica:***
 Comprender la utilidad de las interrupciones por software y por hardware y el funcionamiento del Controlador de
 Interrupciones Programable (PIC). Escribir programas en el lenguaje de ensamblado del simulador MSX88. Ejecutarlos y
 verificar los resultados, analizando el flujo de información entre los distintos componentes del microprocesador.
 
 
-## Ejercicios de la practica
+## ***Ejercicios de la practica***
+
 **1.** *Escritura de datos en la pantalla de comandos. Implementar un programa en el lenguaje assembler del simulador MSX88 que muestre en la pantalla de comandos un mensaje previamente almacenado en memoria de datos, aplicando la interrupción por software INT 7.*
 
 ```x86asm

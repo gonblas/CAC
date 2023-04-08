@@ -2,10 +2,11 @@
 ## *Entrada/Salida.*
 ___
 
-## Objetivos de la practica:
+## ***Objetivos de la practica:***
 Comprender la comunicación entre el microprocesador y los periféricos externos (luces, microconmutadores e impresora). Configurar la interfaz de entrada/salida (PIO) y el dispositivo de handshaking (HAND-SHAKE) para el intercambio de información entre el microprocesador y el mundo exterior. Escribir programas en el lenguaje assembly del simulador MSX88. Ejecutarlos y verificar los resultados, analizando el flujo de información entre los distintos componentes del sistema.
 
-## Ejercicios de la practica
+## ***Ejercicios de la practica***
+
 **1.** *Encendido/apagado de las luces (periférico de salida) mediante la barra de microconmutadores (periférico de entrada), ambos comunicados con el microprocesador a través de los puertos paralelos de la PIO. Implementar un programa en el lenguaje assembly del simulador MSX88 que configure la PIO para leer el estado de los microconmutadores y escribirlo en la barra de luces. El programa se debe ejecutar bajo la configuración P1 C0 del simulador. Los microconmutadores se manejan con las teclas 0-7.*
 
 ```x86asm
@@ -186,6 +187,7 @@ POLL:   IN  AL, HAND+1
         INT 0
         END
 ```
+___
 **Uso de la impresora a través del dispositivo de hand-shaking por interrupción.**
 
 **8.** *Escribir un programa que envíe datos a la impresora a través del HAND-SHAKE. La comunicación se debe establecer por interrupciones emitidas desde el HAND-SHAKE cada vez que la impresora se desocupa. Ejecutar en configuración P1 C2.*
@@ -235,6 +237,7 @@ LAZO:   CMP CL, 0
 ```
 
 **9.** *Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los almacene en memoria. Una vez ingresados, que los envíe a la impresora a través del HAND-SHAKE, en primer lugar tal cual fueron ingresados y a continuación en sentido inverso. Implementar dos versiones, una por consulta de estado y otra por interrupción, en lo que se refiere a la comunicación entre el HAND-SHAKE y el microprocesador.*
+___
 
 **Uso de la impresora a través del dispositivo USART con el protocolo DTR por consulta de estado.**
 
@@ -271,11 +274,11 @@ TEST:   IN  AL, USART+2
 
 
 **11.** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo DTR pero realizando la  comunicación por interrupción. Ejecutar en configuración P1 C4.*
-
+___
 **Uso de la impresora a través del dispositivo USART con el protocolo DTR por consulta de estado.**
 
 **12.**  *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo ON/OFF realizando la  comunicación entre CPU y USART por consulta de estado. Ejecutar en configuración P1 C4.*
-
+___
 **Uso de la impresora a través del dispositivo USART con el protocolo XON/XOFF por interrupción.**
 
 **13.** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo ON/OFF realizando la  comunicación entre CPU y USART por interrupción. Ejecutar en configuración P1 C4.*
@@ -350,8 +353,8 @@ BUCLE:  CMP FLAG, 1
         END
 ```
 
-
-### **Anexo**
+___
+### ***Anexo***
 
 **1.**  **DMA** *. Transferencia de datos memoria-memoria. Escribir un programa que copie una cadena de caracteres almacenada a partir de la dirección 1000H en otra parte de la memoria, utilizando el CDMA en modo de transferencia por bloque. La cadena original se debe mostrar en la pantalla de comandos antes de la transferencia. Una vez finalizada, se debe visualizar en la pantalla la cadena copiada para verificar el resultado de la operación. Ejecutar el programa en la configuración P1 C3.*
 
@@ -434,8 +437,6 @@ ORG 2000H
 **k.** *¿Qué hace la rutina de interrupción del CDMA del programa anterior?*
 
 
-
-
 **2.** **DMA** *.Transferencia de datos memoria-periférico. Escribir un programa que transfiera datos desde la memoria hacia la impresora sin intervención de la CPU, utilizando el CDMA en modo de transferencia bajo demanda.*
 
 ```x86asm
@@ -502,3 +503,4 @@ LAZO:   CMP FLAG, 1
 **e.** *¿Qué evento hace que el CDMA emita una interrupción al PIC?*
 
 **f.** *¿Cuándo finaliza la ejecución del LAZO?*
+___

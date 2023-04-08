@@ -2,7 +2,7 @@
 ## *Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.*
 ___
 
-## Objetivos de la practica:
+## ***Objetivos de la practica:***
 Que el alumno:
 * Domine las instrucciones básicas del lenguaje assembly del MSX88.
 * Utilice los diferentes modos de direccionamiento.
@@ -10,10 +10,11 @@ Que el alumno:
 * Comprenda la utilidad y funcionamiento de las subrutinas.
 * Ejecute y verifique los resultados, analizando el flujo de información entre los distintos componentes del sistema.
 
-### Atencion
+### ***Atencion***
 >Para cada programa propuesto, deberá editar el archivo fuente con extensión asm (ej: ejer1.asm), luego ensamblarlo usando asm88.exe (comando: asm88 ejer1.asm) y enlazarlo con link88.exe (comando: link88 ejer1.o). Cada archivo obtenido con extensión eje (ej: ejer1.eje) deberá ser cargado y ejecutado en el simulador MSX88.
 ___
-## Ejercicios de la practica
+## ***Ejercicios de la practica***
+
 **1.** *El siguiente programa utiliza una instrucción de transferencia de datos (instrucción MOV) con diferentes modos de direccionamiento para referenciar sus operandos. Ejecutar y analizar el funcionamiento de cada instrucción en el Simulador MSX88 observando el flujo de información a través del BUS DE DATOS, el BUS DE DIRECCIONES, el BUS DE CONTROL, el contenido de REGISTROS, de posiciones de MEMORIA, operaciones en la ALU, etc.*
 
 ```x86asm
