@@ -39,9 +39,9 @@ SUMO:       DEC DL                 ;Me muevo a la direccion donde se encuentra l
             JMP SUMO
 NO_SUMO:    INT 7                  ;Imprimo la cadena
             POP AX
-            MOV BX, 10             ;\n
-            INT 7                  ;Imprimo un salto de linea
             POP BX
+            MOV BYTE PTR [BX], 10  ;\n
+            INT 7                  ;Imprimo un salto de linea
             POP DX
             JMP WHILE
 

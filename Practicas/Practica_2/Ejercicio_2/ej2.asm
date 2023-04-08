@@ -2,7 +2,7 @@ ORG 1000H
         CAR DB 01H
 
 ORG 2000H
-        MOV CL, 255              ;Contador de caracteres
+        MOV CL, 126              ;Contador de caracteres
         MOV BX, OFFSET CAR
         MOV AL, 1
 
