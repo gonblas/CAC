@@ -5,24 +5,42 @@
 ORG 40
             IP_CLK DW RUT_CLK
 ORG 1000H
+            MIN DB 30H
+            MIN2 DB 30H
+            DP DB 58
             SEG DB 30H
             SEG2 DB 30H
             FIN DB ?
 ORG 3000H
 RUT_CLK:    PUSH AX
+            PUSH CX
             INC SEG2
             CMP SEG2, 3AH
             JNZ RESET
             MOV SEG2, 30H
+            MOV CL, 0FH
             INC SEG
             CMP SEG, 36H
             JNZ RESET
             MOV SEG, 30H
-RESET:      INT 7
-            MOV AL, 0
+            ;Aumentar un min y comparar
+            INC MIN2
+            CMP MIN2, 3AH
+            JNZ RESET
+            MOV MIN2, 30H
+            INC MIN
+            CMP MIN, 36H
+            JNZ RESET
+            MOV MIN, 30H
+
+RESET:      CMP CL, 0FH
+            JNZ NO_PRINT
+            INT 7
+NO_PRINT:   MOV AL, 0
             OUT TIMER, AL
             MOV AL, EOI
             OUT PIC, AL
+            POP CX
             POP AX
             IRET
 ORG 2000H
@@ -35,8 +53,8 @@ ORG 2000H
             OUT TIMER+1, AL ; TIMER: registro COMP
             MOV AL, 0
             OUT TIMER, AL ; TIMER: registro CONT
-            MOV BX, OFFSET SEG
-            MOV AL, OFFSET FIN-OFFSET SEG
+            MOV BX, OFFSET MIN
+            MOV AL, OFFSET FIN-OFFSET MIN
             STI
 LAZO:       JMP LAZO
             END
