@@ -7,8 +7,8 @@ configuración y dimensionamiento de sistemas de procesamiento de información.
 ___
 
 ## ***Practicas***
-* [Practica 1]((https://github.com/gonblas/CAC/tree/main/Practicas/Practica_1) "Practica 1"): Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.
-* [Practica 2]((https://github.com/gonblas/CAC/tree/main/Practicas/Practica_2) "Practica 2"): Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.
+* [Practica 1]((/Practicas/Practica_1) "Practica 1"): Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.
+* [Practica 2]((/Practicas/Practica_2) "Practica 2"): Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.
 
 ___
 
