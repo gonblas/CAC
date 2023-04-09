@@ -7,14 +7,14 @@ configuración y dimensionamiento de sistemas de procesamiento de información.
 ___
 
 ## ***Practicas***
-* [Practica 1]((/Practicas/Practica_1) "Practica 1"): Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.
-* [Practica 2]((/Practicas/Practica_2) "Practica 2"): Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.
+* [Practica 1](Practicas/Practica_1 "Practica 1"): Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.
+* [Practica 2](Practicas/Practica_2 "Practica 2"): Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.
 
 ___
 
 ## ***Enlaces Utiles***
 
-[Catedra - Conceptos de Arquitectura de Computadoras]((http://163.10.22.92//catedras/ConArqCom/index.htm) "Pagina de la catedra")
+[Catedra - Conceptos de Arquitectura de Computadoras](http://163.10.22.92//catedras/ConArqCom/index.htm "Pagina de la catedra")
 
-[Metodologia - Conceptos de Arquitectura de Computadoras]((https://ic.info.unlp.edu.ar/wp-content/uploads/2022/02/Metodologia-CAC-2019.pdf) "Metodologia de la materia")
+[Metodologia - Conceptos de Arquitectura de Computadoras](https://ic.info.unlp.edu.ar/wp-content/uploads/2022/02/Metodologia-CAC-2019.pdf "Metodologia de la materia")
 ___
