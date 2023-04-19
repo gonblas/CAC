@@ -53,7 +53,7 @@ ORG 2000H
         STI
 LAZO:   JMP LAZO
 ORG 3000H
-        RUT_CLK: INC INICIO
+RUT_CLK:INC INICIO
         CMP INICIO, 0FFH
         JNZ LUCES
         MOV INICIO, 0
@@ -78,7 +78,7 @@ PIO EQU 30H
 
 ORG 1000H
         MSJ DB  "CONCEPTOS DE        "
-        DB  "ARQUITECTURA DE     
+        DB  "ARQUITECTURA DE         "    
         DB  "COMPUTADORAS"
         FIN DB  ?
 ORG 2000H
@@ -100,7 +100,7 @@ POLL:   IN  AL, PIO
         OR  AL, 02H
         OUT PIO, AL
         IN  AL, PIO
-        AEditor: Tab CompletionND AL, 0FDH
+        AND AL, 0FDH
         OUT PIO, AL
         INC BX
         DEC CL
@@ -118,7 +118,7 @@ ORG 1000H
         CAR DB  ?
 
 ORG 3000H
-        INI_IMP: MOV AL, 0FDH
+INI_IMP:MOV AL, 0FDH
         OUT PIO+2, AL
         MOV AL, 0
         OUT PIO+3, AL
@@ -127,7 +127,16 @@ ORG 3000H
         OUT PIO, AL
         RET
 
-ORG  2000H
+ORG 4000H
+PULSO:  IN  AL, PIO
+        OR  AL, 02H
+        OUT PIO, AL
+        IN AL, PIO
+        AND AL, 0FDH
+        OUT PIO, AL
+        RET
+
+ORG 2000H
         PUSH AX
         CALL INI_IMP
         POP  AX
@@ -145,16 +154,8 @@ POLL:   IN AL, PIO
         DEC CL
         JNZ LAZO
         INT 0
-        END
 
-ORG 4000H
-PULSO:  IN  AL, PIO
-        OR  AL, 02H
-        OUT PIO, AL
-        IN AL, PIO
-        AND AL, OFDH
-        OUT PIO, AL
-        RET
+        END
 ```
 
 **6.** *Escribir un programa que solicite ingresar caracteres por teclado y que recién al presionar la tecla F10 los envíe a la impresora a través de la PIO. No es necesario mostrar los caracteres en la pantalla. Ejecutar en configuración P1 C1 del simulador.*
@@ -197,8 +198,7 @@ ___
         HAND EQU 40H
         N_HND EQU 10
 ORG 40
-        IP_HND  
-        DW RUT_HND
+        IP_HND DW RUT_HND
 
 ORG 3000H
 RUT_HND:PUSH AX
@@ -212,7 +212,7 @@ RUT_HND:PUSH AX
         IRET
 
 ORG 1000H
-        MSJ DB  "UNIVERSIDAD         "
+        MSJ DB  "UNIVERSIDAD "
         DB  "NACIONAL DE LA PLATA"
         FIN DB  ?
 
