@@ -15,7 +15,7 @@ ORG 2000H
         MOV AL, N_CLK
         OUT PIC+5, AL   ;Carga INT1
         MOV AL, 1
-        OUT TIMER+1, AL ;Setea el TIMER
+        OUT TIMER+1, AL ;Setea el registro COMP del TIMER
         MOV AL, 0
         OUT PIO+3, AL   ;Setea a PB y CB (salida) en 0
         OUT PIO+1, AL

@@ -35,7 +35,7 @@ ORG 2000H
 LAZO:   CMP CL, 0
         JNZ LAZO
         CLI
-        IN AL, HAND+1  ;Forzamos el bit 7 del registro state en 0: para que no pueda interrumpir
+        IN AL, HAND+1  ;Forzamos el bit 7 del registro state en 0: para que no pueda interrumpir mas
         AND AL, 7FH
         OUT HAND+1, AL
         STI
