@@ -4,6 +4,9 @@
         N_CLK EQU 10
 ORG 40
         IP_CLK DW  RUT_CLK
+ORG 1000H
+        TABLA DB 1H, 2H, 4H, 8H, 10H, 20H, 40H, 80H
+        FIN_TABLA DB ?
 
 ORG 2000H
         CLI
@@ -17,43 +20,31 @@ ORG 2000H
         OUT PIO+3, AL   ;Seteo a PB y CB (salida) en 0
         OUT PIO+1, AL
         OUT TIMER, AL
-        MOV CL, 1
         MOV CH, 0       ;0=Rot izq. y FF=Rot der.
+        MOV BX, OFFSET TABLA
         STI
 LAZO:   JMP LAZO
 
-ORG 4000H
-ROT_DER:PUSH AX
-        MOV AH, 7
-DER:    ADD CL, CL      ;Roto a la derecha
-        JNC SIG         
-        INC CL          
-SIG:    DEC AH          
-        JNZ DER
-        POP AX
-        RET
-        
 ORG 3000H
-RUT_CLK:MOV AL, CL
+RUT_CLK:MOV AL, [BX]
         OUT PIO+1, AL
         MOV AL, 0
         OUT TIMER, AL
         
         CMP CH, 0
-        JZ IZQ
-        CMP CL, 1H
-        JZ CAMBIO
-CALL ROT_DER
-        JMP FIN
-CAMBIO: MOV CL, 2
-        MOV CH, 0
-        JMP FIN
-IZQ:    ADD CL, CL     ;Roto a la izquierda
-        CMP CL, 0H
+        JNZ DER
+        INC BX
+        CMP BX, OFFSET FIN_TABLA
         JNZ FIN
-        MOV CH, 0FFH
-        MOV CL, 40h
-
+        SUB BX, 2H
+        XOR CH, 0FFH
+        JMP FIN
+        
+DER:    DEC BX
+        CMP BX, OFFSET TABLA
+        JNS FIN
+        ADD BX, 2H
+        XOR CH, 0FFH
 FIN:    MOV AL, 20H
         OUT PIC, AL
         IRET

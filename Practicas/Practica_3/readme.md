@@ -245,7 +245,6 @@ ___
 
 ```x86asm
         USART EQU 60H
-
 ORG 1000H
         SACADOS DW  0
         TABLA DB  "Comunicación serie a"
@@ -354,7 +353,11 @@ BUCLE:  CMP FLAG, 1
 ```
 
 ___
-### ***Anexo***
+### ***Anexo DMA***
+
+## ***Objetivos:***
+Comprender el funcionamiento del Controlador de Acceso Directo a Memoria (CDMA) incluido en el
+simulador MSX88. Configurarlo para la transferencia de datos memoria-memoria y memoria-periférico en modo bloque y bajo demanda. Escribir programas en el lenguaje assembly del simulador MSX88. Ejecutarlos y verificar los resultados, analizando el flujo de información entre los distintos componentes del sistema.
 
 **1.**  **DMA** *. Transferencia de datos memoria-memoria. Escribir un programa que copie una cadena de caracteres almacenada a partir de la dirección 1000H en otra parte de la memoria, utilizando el CDMA en modo de transferencia por bloque. La cadena original se debe mostrar en la pantalla de comandos antes de la transferencia. Una vez finalizada, se debe visualizar en la pantalla la cadena copiada para verificar el resultado de la operación. Ejecutar el programa en la configuración P1 C3.*
 
@@ -446,8 +449,7 @@ ORG 2000H
         N_DMA EQU 20
 
 ORG 80
-        P_DMADW RUT_DMA
-
+        IP_DMA DW RUT_DMA
 ORG 1000H
         MSJ DB " INFORMATICA"
         FIN DB  ?
