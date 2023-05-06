@@ -7,7 +7,7 @@ Comprender la comunicación entre el microprocesador y los periféricos externos
 
 ## ***Ejercicios de la practica***
 
-**1.** *Encendido/apagado de las luces (periférico de salida) mediante la barra de microconmutadores (periférico de entrada), ambos comunicados con el microprocesador a través de los puertos paralelos de la PIO. Implementar un programa en el lenguaje assembly del simulador MSX88 que configure la PIO para leer el estado de los microconmutadores y escribirlo en la barra de luces. El programa se debe ejecutar bajo la configuración P1 C0 del simulador. Los microconmutadores se manejan con las teclas 0-7.*
+**1)** *Encendido/apagado de las luces (periférico de salida) mediante la barra de microconmutadores (periférico de entrada), ambos comunicados con el microprocesador a través de los puertos paralelos de la PIO. Implementar un programa en el lenguaje assembly del simulador MSX88 que configure la PIO para leer el estado de los microconmutadores y escribirlo en la barra de luces. El programa se debe ejecutar bajo la configuración P1 C0 del simulador. Los microconmutadores se manejan con las teclas 0-7.*
 
 ```x86asm
         PA EQU 30H
@@ -25,7 +25,7 @@ POLL:   IN  AL, PA
         END
 ```
 
-**2.** *Encendido/apagado sincronizado de las luces. Implementar un contador que incremente la cuenta en uno una vez por segundo y la visualice a través de las luces conectadas a uno de los puertos paralelos del simulador. Ejecutar en configuración P1 C0.*
+**2)** *Encendido/apagado sincronizado de las luces. Implementar un contador que incremente la cuenta en uno una vez por segundo y la visualice a través de las luces conectadas a uno de los puertos paralelos del simulador. Ejecutar en configuración P1 C0.*
 
 ```x86asm
         PIC EQU 20H
@@ -67,11 +67,11 @@ LUCES:  MOV AL, INICIO
         END
 ```
 
-**3.** *Escribir un programa que encienda una luz a la vez, de las ocho conectadas al puerto paralelo del microprocesador a través de la PIO, en el siguiente orden: 0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-... Cada luz debe estar encendida durante un segundo. Ejecutar en la configuración P1 C0 del simulador.*
+**3)** *Escribir un programa que encienda una luz a la vez, de las ocho conectadas al puerto paralelo del microprocesador a través de la PIO, en el siguiente orden: 0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-2-3-4-5-6-7-6-5-4-3-2-1-0-1-... Cada luz debe estar encendida durante un segundo. Ejecutar en la configuración P1 C0 del simulador.*
 
 **Uso de la impresora a través de la PIO**
 
-**4.** *Escribir un programa que envíe datos a la impresora a través de la PIO. La PIO debe cumplir las funciones de temporización que requiere la impresora para la comunicación. Ejecutar en configuración P1 C1 del simulador y presionar F5 para mostrar la salida en papel. El papel se puede blanquear ingresando el comando BI.*
+**4)** *Escribir un programa que envíe datos a la impresora a través de la PIO. La PIO debe cumplir las funciones de temporización que requiere la impresora para la comunicación. Ejecutar en configuración P1 C1 del simulador y presionar F5 para mostrar la salida en papel. El papel se puede blanquear ingresando el comando BI.*
 
 ```x86asm
 PIO EQU 30H
@@ -109,7 +109,7 @@ POLL:   IN  AL, PIO
         END
 ```
 
-**5.** *Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los envíe de a uno por vez a la impresora a través de la PIO a medida que se van ingresando. No es necesario mostrar los caracteres en la pantalla. Ejecutar en configuración P1 C1.*
+**5)** *Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los envíe de a uno por vez a la impresora a través de la PIO a medida que se van ingresando. No es necesario mostrar los caracteres en la pantalla. Ejecutar en configuración P1 C1.*
 
 ```x86asm
         PIO EQU 30H
@@ -158,10 +158,10 @@ POLL:   IN AL, PIO
         END
 ```
 
-**6.** *Escribir un programa que solicite ingresar caracteres por teclado y que recién al presionar la tecla F10 los envíe a la impresora a través de la PIO. No es necesario mostrar los caracteres en la pantalla. Ejecutar en configuración P1 C1 del simulador.*
+**6)** *Escribir un programa que solicite ingresar caracteres por teclado y que recién al presionar la tecla F10 los envíe a la impresora a través de la PIO. No es necesario mostrar los caracteres en la pantalla. Ejecutar en configuración P1 C1 del simulador.*
 
 
-**7.** *Escribir un programa que envíe datos a la impresora a través del HAND-SHAKE. La comunicación se debe establecer por consulta de estado (polling). Ejecutar en configuración P1 C2.*
+**7)** *Escribir un programa que envíe datos a la impresora a través del HAND-SHAKE. La comunicación se debe establecer por consulta de estado (polling). Ejecutar en configuración P1 C2.*
 
 ```x86asm
         HAND EQU 40H
@@ -191,7 +191,7 @@ POLL:   IN  AL, HAND+1
 ___
 **Uso de la impresora a través del dispositivo de hand-shaking por interrupción.**
 
-**8.** *Escribir un programa que envíe datos a la impresora a través del HAND-SHAKE. La comunicación se debe establecer por interrupciones emitidas desde el HAND-SHAKE cada vez que la impresora se desocupa. Ejecutar en configuración P1 C2.*
+**8)** *Escribir un programa que envíe datos a la impresora a través del HAND-SHAKE. La comunicación se debe establecer por interrupciones emitidas desde el HAND-SHAKE cada vez que la impresora se desocupa. Ejecutar en configuración P1 C2.*
 
 ```x86asm
         PIC EQU 20H
@@ -236,12 +236,12 @@ LAZO:   CMP CL, 0
         END
 ```
 
-**9.** *Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los almacene en memoria. Una vez ingresados, que los envíe a la impresora a través del HAND-SHAKE, en primer lugar tal cual fueron ingresados y a continuación en sentido inverso. Implementar dos versiones, una por consulta de estado y otra por interrupción, en lo que se refiere a la comunicación entre el HAND-SHAKE y el microprocesador.*
+**9)** *Escribir un programa que solicite el ingreso de cinco caracteres por teclado y los almacene en memoria. Una vez ingresados, que los envíe a la impresora a través del HAND-SHAKE, en primer lugar tal cual fueron ingresados y a continuación en sentido inverso. Implementar dos versiones, una por consulta de estado y otra por interrupción, en lo que se refiere a la comunicación entre el HAND-SHAKE y el microprocesador.*
 ___
 
 **Uso de la impresora a través del dispositivo USART con el protocolo DTR por consulta de estado.**
 
-**10.** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo DTR. La comunicación es por consulta de estado. Ejecutar en configuración P1 C4.*
+**10)** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo DTR. La comunicación es por consulta de estado. Ejecutar en configuración P1 C4.*
 
 ```x86asm
         USART EQU 60H
@@ -272,15 +272,15 @@ TEST:   IN  AL, USART+2
 ```
 
 
-**11.** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo DTR pero realizando la  comunicación por interrupción. Ejecutar en configuración P1 C4.*
+**11)** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo DTR pero realizando la  comunicación por interrupción. Ejecutar en configuración P1 C4.*
 ___
 **Uso de la impresora a través del dispositivo USART con el protocolo DTR por consulta de estado.**
 
-**12.**  *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo ON/OFF realizando la  comunicación entre CPU y USART por consulta de estado. Ejecutar en configuración P1 C4.*
+**12)**  *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo ON/OFF realizando la  comunicación entre CPU y USART por consulta de estado. Ejecutar en configuración P1 C4.*
 ___
 **Uso de la impresora a través del dispositivo USART con el protocolo XON/XOFF por interrupción.**
 
-**13.** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo ON/OFF realizando la  comunicación entre CPU y USART por interrupción. Ejecutar en configuración P1 C4.*
+**13)** *Escribir un programa que envíe datos a la impresora a través de la USART usando el protocolo ON/OFF realizando la  comunicación entre CPU y USART por interrupción. Ejecutar en configuración P1 C4.*
 
 ```x86asm
         USART EQU 60H
@@ -359,7 +359,7 @@ ___
 Comprender el funcionamiento del Controlador de Acceso Directo a Memoria (CDMA) incluido en el
 simulador MSX88. Configurarlo para la transferencia de datos memoria-memoria y memoria-periférico en modo bloque y bajo demanda. Escribir programas en el lenguaje assembly del simulador MSX88. Ejecutarlos y verificar los resultados, analizando el flujo de información entre los distintos componentes del sistema.
 
-**1.**  **DMA** *. Transferencia de datos memoria-memoria. Escribir un programa que copie una cadena de caracteres almacenada a partir de la dirección 1000H en otra parte de la memoria, utilizando el CDMA en modo de transferencia por bloque. La cadena original se debe mostrar en la pantalla de comandos antes de la transferencia. Una vez finalizada, se debe visualizar en la pantalla la cadena copiada para verificar el resultado de la operación. Ejecutar el programa en la configuración P1 C3.*
+**1)**  **DMA** *. Transferencia de datos memoria-memoria. Escribir un programa que copie una cadena de caracteres almacenada a partir de la dirección 1000H en otra parte de la memoria, utilizando el CDMA en modo de transferencia por bloque. La cadena original se debe mostrar en la pantalla de comandos antes de la transferencia. Una vez finalizada, se debe visualizar en la pantalla la cadena copiada para verificar el resultado de la operación. Ejecutar el programa en la configuración P1 C3.*
 
 ```x86asm
         PIC EQU 20H
@@ -417,30 +417,30 @@ ORG 2000H
 
 ***Cuestionario:***
 
-**a.** *Analizar minuciosamente cada línea del programa anterior.*
+**a)** *Analizar minuciosamente cada línea del programa anterior.*
 
-**b.** *Explicar qué función cumple cada registro del CDMA e indicar su dirección.*
+**b)** *Explicar qué función cumple cada registro del CDMA e indicar su dirección.*
 
-**c.** *Describir el significado de los bits del registro CTRL.*
+**c)** *Describir el significado de los bits del registro CTRL.*
 
-**d.** *¿Qué diferencia hay entre transferencia de datos por bloque y bajo demanda?*
+**d)** *¿Qué diferencia hay entre transferencia de datos por bloque y bajo demanda?*
 
-**e.** *¿Cómo se le indica al CDMA desde el programa que debe arrancar la transferencia de datos?*
+**e)** *¿Cómo se le indica al CDMA desde el programa que debe arrancar la transferencia de datos?*
 
-**f.** *¿Qué le indica el CDMA a la CPU a través de la línea hrq? ¿Qué significa la respuesta que le envía la CPU a través de la línea hlda?*
+**f)** *¿Qué le indica el CDMA a la CPU a través de la línea hrq? ¿Qué significa la respuesta que le envía la CPU a través de la línea hlda?*
 
-**g.** *Explicar detalladamente cada paso de la operación de transferencia de un byte desde una celda a otra de la memoria. Verificar que en esta operación intervienen el bus de direcciones, el bus de datos y las líneas mrd y mwr.*
+**g)** *Explicar detalladamente cada paso de la operación de transferencia de un byte desde una celda a otra de la memoria. Verificar que en esta operación intervienen el bus de direcciones, el bus de datos y las líneas mrd y mwr.*
 
-**h.** *¿Qué sucede con los registros RF, CONT y RD del CDMA después de transferido un byte?*
+**h)** *¿Qué sucede con los registros RF, CONT y RD del CDMA después de transferido un byte?*
 
-**i.** *¿Qué evento hace que el CDMA emita una interrupción y a través de qué línea de control lo hace?*
+**i)** *¿Qué evento hace que el CDMA emita una interrupción y a través de qué línea de control lo hace?*
 
-**j.** *¿Cómo se configura el PIC para atender la interrupción del CDMA?*
+**j)** *¿Cómo se configura el PIC para atender la interrupción del CDMA?*
 
-**k.** *¿Qué hace la rutina de interrupción del CDMA del programa anterior?*
+**k)** *¿Qué hace la rutina de interrupción del CDMA del programa anterior?*
 
 
-**2.** **DMA** *.Transferencia de datos memoria-periférico. Escribir un programa que transfiera datos desde la memoria hacia la impresora sin intervención de la CPU, utilizando el CDMA en modo de transferencia bajo demanda.*
+**2)** **DMA** *.Transferencia de datos memoria-periférico. Escribir un programa que transfiera datos desde la memoria hacia la impresora sin intervención de la CPU, utilizando el CDMA en modo de transferencia bajo demanda.*
 
 ```x86asm
         PIC EQU 20H
@@ -494,15 +494,15 @@ LAZO:   CMP FLAG, 1
 
 ***Cuestionario:***
 
-**a.** *Analizar minuciosamente cada línea del programa anterior.*
+**a)** *Analizar minuciosamente cada línea del programa anterior.*
 
-**b.** *¿Qué debe suceder para que el HAND-SHAKE emita una interrupción al CDMA?*
+**b)** *¿Qué debe suceder para que el HAND-SHAKE emita una interrupción al CDMA?*
 
-**c.** *¿Cómo demanda el periférico, en este caso el HAND-SHAKE, la transferencia de datos desde memoria? ¿A través de qué líneas se comunican con el CDMA ante cada pedido?*
+**c)** *¿Cómo demanda el periférico, en este caso el HAND-SHAKE, la transferencia de datos desde memoria? ¿A través de qué líneas se comunican con el CDMA ante cada pedido?*
 
-**d.** *Explicar detalladamente cada paso de la operación de transferencia de un byte desde una celda de memoria hacia el HAND-SHAKE y la impresora.*
+**d)** *Explicar detalladamente cada paso de la operación de transferencia de un byte desde una celda de memoria hacia el HAND-SHAKE y la impresora.*
 
-**e.** *¿Qué evento hace que el CDMA emita una interrupción al PIC?*
+**e)** *¿Qué evento hace que el CDMA emita una interrupción al PIC?*
 
-**f.** *¿Cuándo finaliza la ejecución del LAZO?*
+**f)** *¿Cuándo finaliza la ejecución del LAZO?*
 ___

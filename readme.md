@@ -9,6 +9,11 @@ ___
 ## ***Practicas***
 * [Practica 1](Practicas/Practica_1 "Practica 1"): Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.
 * [Practica 2](Practicas/Practica_2 "Practica 2"): Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.
+* [Practica 3](Practicas/Practica_3 "Practica 3"): Entrada/Salida.
+* [Practica 4](Practicas/Practica_4 "Practica 4"): Segmentación de cauce en procesador RISC.
+* [Practica 5](Practicas/Practica_5 "Practica 5"): Procesador RISC: instrucciones de Punto Flotante y pasaje de parámetros.
+* [Practica 6](Practicas/Practica_6 "Practica 6"): Procesador RISC: utilizando la E/S
+
 
 ___
 

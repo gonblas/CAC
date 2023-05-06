@@ -5,7 +5,7 @@ ORG 40
             IP_F10 DW RUT_F10
 ORG 2000H
             CLI
-            MOV AL, 0FEH
+            MOV AL, 0FEH ;11111110
             OUT PIC+1, AL ; PIC: registro IMR
             MOV AL, N_F10 
             OUT PIC+4, AL ; PIC: registro INT0

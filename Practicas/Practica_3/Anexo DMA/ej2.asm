@@ -33,7 +33,7 @@ ORG 2000H
         MOV AL, AH           ;a ..
         OUT DMA+3, AL        ;transferir
         MOV AL, 4            ;inicialización ..
-        OUT DMA+6, AL        ;de control DMA
+        OUT DMA+6, AL        ;de control DMA 
         MOV AL, 0F7H
         OUT PIC+1, AL        ;habilita INT3
         OUT DMA+7, AL        ;arranque Transfer

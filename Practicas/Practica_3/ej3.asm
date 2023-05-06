@@ -21,6 +21,7 @@ ORG 2000H
         MOV CH, 0       ;0=Rot izq. y FF=Rot der.
         STI
 LAZO:   JMP LAZO
+        INT0
 
 ORG 4000H
 ROT_DER:PUSH AX
@@ -43,7 +44,7 @@ RUT_CLK:MOV AL, CL
         JZ IZQ
         CMP CL, 1H
         JZ CAMBIO
-CALL ROT_DER
+        CALL ROT_DER
         JMP FIN
 CAMBIO: MOV CL, 2
         MOV CH, 0
