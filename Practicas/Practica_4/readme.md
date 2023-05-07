@@ -35,16 +35,16 @@ xori r6, r6, 0xffffffffffffffff
 **2)** *El siguiente programa intercambia el contenido de dos palabras de la memoria de datos, etiquetadas A y B*
 
 ```x86asm
-    .data
-A:  .word 1
-B:  .word 2
+        .data
+A:      .word 1
+B:      .word 2
 
-    .code
-ld r1, A(r0)
-ld r2, B(r0)
-sd r2, A(r0)
-sd r1, B(r0)
-halt
+        .code
+        ld r1, A(r0)
+        ld r2, B(r0)
+        sd r2, A(r0)
+        sd r1, B(r0)
+        halt
 ```
 
 **a)** *Ejecutarlo en el simulador con la opción Configure/Enable Forwarding deshabilitada) Analizar paso a paso su funcionamiento, examinar las distintas ventanas que se muestran en el simulador y responder:*

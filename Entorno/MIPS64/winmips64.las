@@ -1,1 +1,1 @@
-Z:\home\gonblas_\Documents\Repos\CAC\factorial.s
+Z:\home\gonblas_\Documents\Repos\CAC\Practicas\Practica_4\ej2.s
