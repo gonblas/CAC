@@ -1,7 +1,4 @@
-# ***Practica 1***: 
-## *Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.*
-___
-
+# ***Practica 1***: *Assembly, Instrucciones, Programas, Subrutinas y Simulador MSX88.*
 ## ***Objetivos de la practica:***
 Que el alumno:
 * Domine las instrucciones básicas del lenguaje assembly del MSX88.

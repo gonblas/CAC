@@ -1,6 +1,4 @@
-# ***Practica 4***: 
-## *Segmentación de cauce en procesador RISC*
-___
+# ***Practica 4***: *Segmentación de cauce en procesador RISC*
 
 ## ***Objetivos de la practica:***
 Comprender el funcionamiento de la segmentación de cauce del procesador MIPS de 64 bits. Analizar las ventajas e inconvenientes de este tipo de arquitectura. Familiarizarse con el desarrollo de programas para procesadores con sets reducidos de instrucciones (RISC). Resolver problemas y verificarlos a través de simulaciones (winmips64)

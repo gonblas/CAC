@@ -1,6 +1,4 @@
-# ***Practica 3***: 
-## *Entrada/Salida.*
-___
+# ***Practica 3***: *Entrada/Salida.*
 
 ## ***Objetivos de la practica:***
 Comprender la comunicación entre el microprocesador y los periféricos externos (luces, microconmutadores e impresora). Configurar la interfaz de entrada/salida (PIO) y el dispositivo de handshaking (HAND-SHAKE) para el intercambio de información entre el microprocesador y el mundo exterior. Escribir programas en el lenguaje assembly del simulador MSX88. Ejecutarlos y verificar los resultados, analizando el flujo de información entre los distintos componentes del sistema.

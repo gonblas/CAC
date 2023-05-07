@@ -1,6 +1,4 @@
-# ***Practica 2***: 
-## *Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.*
-___
+# ***Practica 2***: *Interrupciones por Software y Hardware. Creacion de rutinas de gestion de interrupciones por Hardware.*
 
 ## ***Objetivos de la practica:***
 Comprender la utilidad de las interrupciones por software y por hardware y el funcionamiento del Controlador de

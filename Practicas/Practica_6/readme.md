@@ -1,6 +1,4 @@
-# ***Practica 6***: 
-## *Procesador RISC: instrucciones de Punto Flotante y pasaje de parámetros.*
-___
+# ***Practica 6***: *Procesador RISC: instrucciones de Punto Flotante y pasaje de parámetros.*
 
 ## ***Objetivos de la practica:***
 Familiarizarse con el desarrollo de programas para procesadores con sets reducidos de instrucciones (RISC).

@@ -1,6 +1,4 @@
-# ***Practica 5***: 
-## *Procesador RISC: instrucciones de Punto Flotante y pasaje de parámetros.*
-___
+# ***Practica 5***: *Procesador RISC: instrucciones de Punto Flotante y pasaje de parámetros.*
 
 ## ***Objetivos de la practica:***
 Familiarizarse con las instrucciones de MIPS64 para manejar datos en formato de Punto Flotante.
@@ -40,6 +38,7 @@ res2:   .double 0.0
 
 **3)** *Escribir un programa que calcule la superficie de un triángulo rectángulo de base 5,85 cm y altura 13,47 cm.*
 > Pista: la superficie de un triángulo se calcula como:
+
 $$Error!$$
 
 
