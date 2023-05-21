@@ -38,12 +38,12 @@ res2:   .double 0.0
 
 **3)** *Escribir un programa que calcule la superficie de un triángulo rectángulo de base 5,85 cm y altura 13,47 cm.*
 > Pista: la superficie de un triángulo se calcula como:
-
-$$Error!$$
+$$A = \frac{b*h}{2}$$
 
 
 **4)** *El índice de masa corporal (IMC) es una medida de asociación entre el peso y la talla de un individuo. Se calcula a partir del peso (expresado en kilogramos, por ejemplo: 75,7 kg) y la estatura (expresada en metros, por ejemplo 1,73 m), usando la fórmula:*
-$$Error!$$
+$$IMC = \frac{peso}{estatura^2}$$
+
 *De acuerdo al valor calculado con este índice, puede clasificarse el estado nutricional de una persona en: **Infrapeso** (IMC < 18,5), **Normal** (18,5 ≤ IMC < 25), **Sobrepeso** (25 ≤ IMC < 30) y **Obeso** (IMC ≥ 30).*
 
 *Escriba un programa que dado el peso y la estatura de una persona calcule su IMC y lo guarde en la dirección etiquetada IMC. También deberá guardar en la dirección etiquetada estado un valor según la siguiente tabla:*
@@ -119,7 +119,7 @@ valor:          .word 10
 result:         .word 0
                 .text
                 daddi $sp, $0, 0x400 ; Inicializa el puntero al tope de la pila (1)
-                d $a0, valor($0)
+                ld $a0, valor($0)
                 jal factorial
                 sd $v0, result($0)
                 halt
