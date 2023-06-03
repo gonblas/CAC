@@ -1,1 +1,1 @@
-Z:\home\gonblas_\Documents\Repos\CAC\Practicas\Practica_6\ej2.s
+Z:\home\gonblas_\Documents\Repos\CAC\Practicas\Practica_6\ej6.s

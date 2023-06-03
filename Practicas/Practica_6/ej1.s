@@ -8,7 +8,7 @@ texto:      .byte 0                 ; El mensaje a mostrar
             daddi $t0, $0, texto    ; $t0 = dirección del mensaje a leer
                                     ; Obtengo el String
             daddi $t1, $0, 9        ; Señal de lectura de char
-            daddi $t2, $0, 13       ; \n
+            daddi $t2, $0, 13       ; Enter
 loop:       sd $t1, 0($s1)          ; Enviar señal para leer char
             lbu $t3, 0($s0)         ; Tomo el caracter
             sb $t3, 0($t0)          ; Almaceno el caracter
