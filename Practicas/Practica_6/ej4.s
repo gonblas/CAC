@@ -25,8 +25,7 @@ input:      .byte 0
 ;Recibe CONTROL en $a0
 ;Recibe DATA en $a1
 ;Retorna el caracter en $v0
-char:       
-            daddi $t0, $0, 9
+char:       daddi $t0, $0, 9
             sd $t0, 0($a0)
             ld $v0, 0($a1)
             jr $ra

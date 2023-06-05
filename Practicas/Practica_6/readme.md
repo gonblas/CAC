@@ -134,7 +134,7 @@ loop:           sw $v1, 0($s7)      ; Borra la pelota
                 slti $t0, $s0, 1    ; Comprueba que la pelota no esté en la columna de más
                 dsll $t0, $t0, 1    ; a la izquierda. Si es así, cambia la dirección en X.
                 dadd $s2, $s2, $t0
-                lti $t0, $s1, 1     ; Comprueba que la pelota no esté en la fila de más abajo.
+                slti $t0, $s1, 1     ; Comprueba que la pelota no esté en la fila de más abajo.
                 dsll $t0, $t0, 1    ; Si es así, cambia la dirección en Y.
                 dadd $s3, $s3, $t0
                 sw $v0, 0($s7)      ; Dibuja la pelota.
