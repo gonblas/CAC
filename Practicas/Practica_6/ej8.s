@@ -25,11 +25,11 @@ color_fondo:    .word32 0x00FFFFFF  ; Blanco
                 daddi $t3, $0, 1             ; Dirección X de la pelota
                 daddi $t4, $0, -1            ; Dirección Y de la pelota
                 daddi $sp, $sp, -40          ; Cargo datos de pelota 1
-                sb $t4, 0($sp)
-                sb $t3, 8($sp)
+                sd $t4, 0($sp)
+                sd $t3, 8($sp)
                 sd $t2, 16($sp)
-                sb $t1, 24($sp)
-                sw $t0, 32($sp)
+                sd $t1, 24($sp)
+                sd $t0, 32($sp)
 
 
                 lwu $t0, color_pelota2($0)   ; Color
@@ -42,7 +42,7 @@ color_fondo:    .word32 0x00FFFFFF  ; Blanco
                 sb $t3, 8($sp)
                 sb $t2, 16($sp)
                 sb $t1, 24($sp)
-                sw $t0, 32($sp)
+                sd $t0, 32($sp)
 
 
                 lwu $t0, color_pelota3($0)   ; Color
@@ -82,7 +82,6 @@ color_fondo:    .word32 0x00FFFFFF  ; Blanco
                 sd $t2, 16($sp)
                 sd $t1, 24($sp)
                 sd $t0, 32($sp)
-
 
 
 loop:           daddi $a2, $0, 0    ;Pelota 1 (Pelota 1 tiene numero 0)
